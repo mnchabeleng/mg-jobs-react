@@ -1,0 +1,120 @@
+.listings {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .listing-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: $listingItemMinHeight;
+        background-color: $listingItemBgColor;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 3px;
+        border: 1px solid $listingItemBgColor;
+
+        .listing-item-header,
+        .listing-item-body,
+        .listing-item-footer {
+            padding: 10px;
+        }
+
+        .listing-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .listing-item-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .listing-item-author-image {
+                width: 45px;
+                height: 45px;
+                border-radius: 3px;
+            }
+
+            .listing-item-author-name {
+                margin: 0;
+                font-size: 1rem;
+            }
+        }
+
+        .listing-item-category {
+            font-size: 0.8rem;
+        }
+
+        .listing-item-date {
+            font-size: 0.8rem;
+        }
+
+        .listing-item-type {
+            font-size: 0.8rem;
+            background-color: $black;
+            color: $white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .listing-item-title {
+            font-size: 0.9rem;
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: inherit;
+            text-transform: uppercase;
+        }
+    }
+
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto);
+        gap: 15px;
+        margin: 25px 0;
+    }
+    
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.listing-details-file {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: $lightGray;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.listing-details-meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.listing-details-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $lightGray;
+    padding: 10px;
+    border-radius: 5px;
+
+    .listing-details-author-image {
+        width: 45px;
+        height: 45px;
+        border-radius: 3px;
+    }
+}

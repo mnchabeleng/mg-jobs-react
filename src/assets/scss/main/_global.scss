@@ -1,0 +1,57 @@
+/** section */
+section {
+    padding-bottom: 25px;
+
+    @media (min-width: 1024px) {
+        &.px {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: $containerWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** form elements */
+input,
+button,
+.btn,
+select,
+textarea {
+    padding: 8px;
+    border-radius: 3px;
+}
+  
+button,
+.btn {
+    cursor: pointer;
+}
+
+a.btn {
+    display: block;
+}
+
+/** helpers */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.px {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.bg-red {
+    background-color: $red;
+}

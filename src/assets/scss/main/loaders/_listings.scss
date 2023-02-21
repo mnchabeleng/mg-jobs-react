@@ -1,0 +1,40 @@
+.listings-loader {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .listing-loader-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: $listingItemMinHeight;
+        border-radius: 3px;
+        border: 1px solid $lightGray;
+
+        background: linear-gradient(256deg, $gray, $lightGray);
+        background-size: 250% 250%;
+        animation: block-loading 1s ease infinite;
+    }
+
+    @keyframes block-loading {
+        0%{background-position:68% 0%}
+        50%{background-position:33% 100%}
+        100%{background-position:68% 0%}
+    }
+
+    @media (min-width: 640px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto);
+        gap: 15px;
+        margin: 25px 0;
+    }
+    
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -1,0 +1,62 @@
+/**
+ * Listings styles
+ */
+.posts {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+@media (min-width: 640px) {
+    .posts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto);
+        gap: 10px;
+        margin: 25px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .posts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .posts {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * Listing item styles
+ */
+.posts .postItem {
+    padding: 0;
+}
+
+/**
+ * Listing item image styles
+ */
+ .posts .postItem .postItemImage {
+    position: relative;
+    height: 180px;
+    background-color: brown;
+}
+
+.posts .postItem .postItemImage img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+ * Listing item category styles
+ */
+ .posts .postItem .postItemCategory {
+    position: absolute;
+ }

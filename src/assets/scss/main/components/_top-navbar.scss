@@ -1,0 +1,38 @@
+.top-navbar {
+    padding: 5px;
+    background-color: $topNavbarBgColor;
+    font-size: 0.9rem;
+    color: $white;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $topNavbarHeight;
+    }
+
+    .social-menu {
+        display: flex;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}

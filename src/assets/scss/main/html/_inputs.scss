@@ -1,0 +1,27 @@
+input,
+button,
+select,
+textarea {
+    border: 1px solid $darkGray;
+    background-color: $white;
+
+    &.error {
+        background-color: $lightRed;
+    }
+}
+
+.input-group {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: left;
+
+    .message {
+        font-size: 0.9rem;
+
+        &.error {
+            color: $red;
+        }
+    }
+}

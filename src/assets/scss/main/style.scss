@@ -1,0 +1,29 @@
+.main-layout {
+    @import "./variables.scss";
+    @import "./global.scss";
+    @import "./layouts.scss";
+
+    @import "./html/headings.scss";
+    @import "./html/inputs.scss";
+    @import "./html/buttons.scss";
+
+    @import "./components/top-navbar.scss";
+    @import "./components/header.scss";
+    @import "./components/navbar.scss";
+    @import "./components/hero.scss";
+    @import "./components/search.scss";
+    @import "./components/listings.scss";
+    @import "./components/pagination.scss";
+    @import "./components/posts.scss";
+    @import "./components/newsletter.scss";
+    @import "./components/footer.scss";
+
+    @import "./loaders/page.scss";
+    @import "./loaders/search.scss";
+    @import "./loaders/listings.scss";
+
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: $footerHeight;
+    font-family: $defaultFont;
+}

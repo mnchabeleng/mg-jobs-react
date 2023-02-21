@@ -1,0 +1,22 @@
+footer {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    max-width: $containerWidth;
+    margin-left: auto;
+    margin-right: auto;
+
+    .copy {
+        height: $footerHeight;
+        background-color: $footerBgColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}

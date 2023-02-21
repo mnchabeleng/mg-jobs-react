@@ -1,0 +1,98 @@
+/**
+ * Listings styles
+ */
+.listings {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+@media (min-width: 640px) {
+    .listings {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto);
+        gap: 10px;
+        margin: 25px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .listings {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .listings {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * Listing item styles
+ */
+ .listings .listingItem {
+    background-color: brown;
+    cursor: pointer;
+    border-radius: 3px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+}
+
+@media (min-width: 640px) {
+    .listings .listingItem {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/**
+ * Listing details styles
+ */
+
+/**
+ * Listings search styles
+ */
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.searchForm .row1,
+.searchForm .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (min-width: 768px) {
+    .searchForm .row1 {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .searchForm .row2 {
+        flex-direction: row;
+    }
+    
+    .searchForm .row1 > * {
+        flex: 1;
+    }
+}
+
+/**
+ * Listings pagination styles
+ */
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
