@@ -4,7 +4,6 @@ export default function ListingItemHeader({ data }) {
     const listingCompanyName = data?._embedded['wp:term'][3][0]?.name
     const listingAuthorImage = data?._embedded['wp:term'][3][0]?.acf?.image?.url
     const ListingCategory = data?._embedded['wp:term'][1][0]?.name
-    const listingLocation = ''
 
     return (
         <div className='listing-item-header'>

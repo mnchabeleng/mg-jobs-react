@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
+import { useNavigate } from 'react-router-dom'
 import { useQueryOptions } from '../../../../config'
 import { RiSearchLine } from 'react-icons/ri'
 
@@ -21,6 +22,8 @@ async function fetchData({ queryKey }) {
 }
 
 export default function ListingsSearch() {
+    const navigate = useNavigate()
+
     const [keyword, setKeyword] = useState('')
     const [category, setCategory] = useState('')
     const [location, setLocation] = useState('')
@@ -28,10 +31,7 @@ export default function ListingsSearch() {
 
     function handleFormSubmit(e) {
         e.preventDefault()
-        console.log('keyword', keyword)
-        console.log('category', category)
-        console.log('location', location)
-        console.log('listingType', listingType.toString())
+        navigate(`/listings?keyword=${keyword}&category=${category}&location=${location}&type=${listingType}`)
     }
 
     const categoriesUrl = `${ jobsApiUrl }/mg_job_categories?per_page=100`

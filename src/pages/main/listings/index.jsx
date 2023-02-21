@@ -31,11 +31,23 @@ const description = 'Mail & Guardian offers listings to tenders and jobs in the 
 export default function ListingsPage() {
     const [searchParams] = useSearchParams()
 
-    const listingTypes = searchParams.get('type')
+    const listingsKeyword = searchParams.get('keyword')
+                         ? `&search=${ searchParams.get('keyword') }`
+                         : ''
+
+    const ListingsCategory = searchParams.get('category')
+                         ? `&mg_job_categories=${ searchParams.get('category') }`
+                         : ''
+
+    const ListingsLocation = searchParams.get('location')
+                         ? `&mg_job_locations=${ searchParams.get('location') }`
+                         : ''
+
+    const listingsTypes = searchParams.get('type')
                          ? `&mg_job_types=${ searchParams.get('type') }`
                          : ''
 
-    const urlQueries = `_embed&per_page=20${ listingTypes }`
+    const urlQueries = `_embed&per_page=20${ listingsKeyword + ListingsCategory + ListingsLocation + listingsTypes }`
     const listingsUrl = `https://staging-jobsmgco-staging.kinsta.cloud/wp-json/wp/v2/mg_jobs?${ urlQueries }`
     const {
             data,
