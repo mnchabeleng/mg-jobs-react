@@ -12,12 +12,6 @@ import ListingsPaginaite from '../../../components/main/listings/Paginate'
 
 import ListingsLoader from '../../../loaders/main/listings/Index'
 
-async function fetchListsings() {
-    return axios.get(`https://staging-jobsmgco-staging.kinsta.cloud/wp-json/wp/v2/mg_jobs?_embed&per_page=20`)
-            .then(response => response.data)
-            .catch(error => error)
-}
-
 async function fetchData({ queryKey }) {
     const url = queryKey[1]
     return axios.get(url)

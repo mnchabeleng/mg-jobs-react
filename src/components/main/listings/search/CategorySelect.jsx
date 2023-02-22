@@ -1,4 +1,14 @@
+import { useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+
 export default function CategorySelect({ data, isFetching, category, setCategory }) {
+    const [searchParams] = useSearchParams()
+
+    useEffect(() => {
+        const listingsCategory = searchParams.get('category') ? searchParams.get('category') : ''
+        setCategory(listingsCategory)
+    }, [])
+
     return (
         <select
             onChange={ (e) => setCategory(e.target.value) }
