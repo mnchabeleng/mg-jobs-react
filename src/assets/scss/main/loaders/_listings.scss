@@ -16,18 +16,11 @@
         animation: block-loading 1s ease infinite;
     }
 
-    @keyframes block-loading {
-        0%{background-position:68% 0%}
-        50%{background-position:33% 100%}
-        100%{background-position:68% 0%}
-    }
-
     @media (min-width: 640px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(auto);
         gap: 15px;
-        margin: 25px 0;
     }
     
     @media (min-width: 768px) {

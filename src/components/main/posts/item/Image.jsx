@@ -1,7 +1,12 @@
 import PostItemCategory from './Category'
 
 export default function PostItemImage({ data }) {
-    const url = data._embedded['wp:featuredmedia'][0].source_url
+    const mediumUrl = data?._embedded['wp:featuredmedia'][0]?.media_details?.size?.medium?.source_url
+    const thumbnailUrl = data?._embedded['wp:featuredmedia'][0]?.media_details?.size?.thumbnail?.source_url
+
+    const url = thumbnailUrl
+                ? thumbnailUrl
+                : data?._embedded['wp:featuredmedia'][0]?.source_url
     
     return (
         <a

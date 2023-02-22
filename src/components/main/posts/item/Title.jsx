@@ -1,5 +1,3 @@
-import styles from '../../../../assets/css/main/components/Posts.module.css'
-
 export default function PostItemTitle({ data }) {
     const title = data.title.rendered.length > 40 ? data.title.rendered.substring(0, 40) + '...' : data.title.rendered
 

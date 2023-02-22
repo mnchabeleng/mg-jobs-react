@@ -1,4 +1,3 @@
-import styles from '../../../../assets/css/main/components/Posts.module.css'
 import PostItemImage from './Image'
 import PostItemTitle from './Title'
 import PostItemMeta from './Meta'

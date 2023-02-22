@@ -15,7 +15,7 @@ import ListingsLoader from '../../../loaders/main/listings/Index'
 async function fetchData({ queryKey }) {
     const url = queryKey[1]
     return axios.get(url)
-            .then(response => response.data)
+            .then(response => response)
             .catch(error => error)
 }
 
@@ -81,9 +81,12 @@ export default function ListingsPage() {
                     { isFetching
                         ? <ListingsLoader count={ 20 } />
                         : <>
-                            <Listings data={ data } />
-                            <ListingsPaginaite pageCount={ 2 } />
-                        </>
+                            <Listings data={ data.data } />
+                            {
+                                parseInt(data.headers['x-wp-totalpages']) > 1
+                                && <ListingsPaginaite pageCount={ parseInt(data.headers['x-wp-totalpages']) } />
+                            }
+                      </>
                     }
                 </div>
             </section>

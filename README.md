@@ -21,6 +21,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm install --lts
 ```
 
+&nbsp;
 ## To run
 
 1. Clone the repository to your computer.
@@ -41,6 +42,7 @@ npm install
 npm run dev
 ```
 
+&nbsp;
 ## To build
 
 1. Build the application by running the following command:
@@ -50,3 +52,11 @@ npm run build
 ```
 
 2. You can now deploy the application by copying the contents of the "dist" directory to a web server or hosting service.
+
+&nbsp;
+### MG Jobs current Wordpress URL(Jobs are uploaded here):
+https://staging-jobsmgco-staging.kinsta.cloud/wp-admin
+
+&nbsp;
+### MG Jobs current Frontend(Jobs are displayed here):
+https://mgjobsreact.kinsta.cloud/

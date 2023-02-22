@@ -25,14 +25,6 @@ export default function ListingTypeCheckboxes({ data, isFetching, listingType, s
     useEffect(() => {
         const param = searchParams.get('type') ? searchParams.get('type') : ''
         const paramArray = param.split(',')
-
-        console.log(paramArray)
-
-        checkboxRefs.current.map((item) => {
-            if(paramArray.includes(item.value)) {
-                console.log(item.value)
-            }
-        })
     }, [])
 
     return (

@@ -1,5 +1,6 @@
 .main-layout {
     @import "./variables.scss";
+    @import "./animations.scss";
     @import "./global.scss";
     @import "./layouts.scss";
 
@@ -21,6 +22,7 @@
     @import "./loaders/page.scss";
     @import "./loaders/search.scss";
     @import "./loaders/listings.scss";
+    @import "./loaders/posts.scss";
 
     position: relative;
     min-height: 100vh;

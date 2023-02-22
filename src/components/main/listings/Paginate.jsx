@@ -1,9 +1,12 @@
-import styles from '../../../assets/css/main/components/Listings.module.css'
+import { useNavigate } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
 
 export default function ListingsPaginaite({ pageCount }) {
-    function handlePageClick() {
-        //
+    const navigate = useNavigate()
+
+    function handlePageClick(e) {
+        const page = e.selected + 1
+        navigate(`?page=${ page }`)
     }
     
     return (
@@ -11,7 +14,7 @@ export default function ListingsPaginaite({ pageCount }) {
             previousLabel={ '← Previous' }
             nextLabel={ 'Next →' }
             pageCount={ pageCount }
-            onPageChange={ handlePageClick }
+            onPageChange={ (e) => handlePageClick(e) }
             containerClassName={ 'listings-pagination' }
             previousLinkClassName={ 'pagination-link' }
             nextLinkClassName={ 'pagination-link' }

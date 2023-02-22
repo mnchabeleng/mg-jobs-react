@@ -1,4 +1,5 @@
 import MainLayout from '../../../layouts/MainLayout'
+import MainSidebarLayout from '../../../layouts/MainSidebarLayout'
 
 import axios from 'axios'
 import { useQuery } from 'react-query'
@@ -40,24 +41,20 @@ export default function ListingDetailsPage() {
         return <div>Error! { error.message }</div>
     }
 
-    if(data[0] < 1 || !data) {
-        return <div>Nothing to display</div>
-    }
-
     return (
-        <MainLayout title={ data[0].title.rendered }>
+        <MainSidebarLayout title={ data[0]?.title.rendered } description={ data[0]?.title.rendered }>
             <section className='px'>
                 <div className='container'>
                     {
                         isFetching
                         ? <div>Loading...</div>
                         : <>
-                            <ListingDetailsHeader data={ data[0] } />
-                            <ListingDetailsBody data={ data[0] } />
+                            <ListingDetailsHeader data={ data[0] ?? [] } />
+                            <ListingDetailsBody data={ data[0] ?? [] } />
                         </>
                     }
                 </div>
             </section>
-        </MainLayout>
+        </MainSidebarLayout>
     )
 }

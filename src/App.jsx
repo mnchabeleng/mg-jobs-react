@@ -1,4 +1,5 @@
 import './assets/scss/app.scss'
+import PageLoader from './loaders/main/PageLoader'
 import { lazy, Suspense } from 'react'
 import {
   BrowserRouter,
@@ -16,19 +17,19 @@ export default function App() {
       <Routes>
         <Route
           index
-          element={ <Suspense fallback={ <div>Loading...</div> }><LazyHomePage /></Suspense> } />
+          element={ <Suspense fallback={ <PageLoader /> }><LazyHomePage /></Suspense> } />
 
         <Route
           path='/listings'
-          element={ <Suspense fallback={ <div>Loading...</div> }><LazyListingsPage /></Suspense> } />
+          element={ <Suspense fallback={ <PageLoader /> }><LazyListingsPage /></Suspense> } />
 
         <Route
           path='/listings/:listingSlug'
-          element={ <Suspense fallback={ <div>Loading...</div> }><LazyListingDetailsPage /></Suspense> } />
+          element={ <Suspense fallback={ <PageLoader /> }><LazyListingDetailsPage /></Suspense> } />
 
         <Route
           path='/listings/:listingSlug/apply'
-          element={ <Suspense fallback={ <div>Loading...</div> }><LazyListingApplyPage /></Suspense> } />
+          element={ <Suspense fallback={ <PageLoader /> }><LazyListingApplyPage /></Suspense> } />
       </Routes>
     </BrowserRouter>
   )
