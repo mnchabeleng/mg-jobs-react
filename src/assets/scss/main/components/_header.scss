@@ -8,5 +8,27 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 2rem;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    @media (min-width: 640px) {
+        .brand img {
+            width: 220px;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .brand img {
+            width: 260px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .brand img {
+            width: 300px;
+        }
     }
 }

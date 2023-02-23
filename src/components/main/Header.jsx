@@ -13,7 +13,7 @@ export default function Header() {
                         <div className='col-1'></div>
                         <div className='col-2'>
                             <Link className='brand' to='/'>
-                                <img src={ MGLogoPNG } width='350px' alt='MG Logo' />
+                                <img src={ MGLogoPNG } alt='MG Logo' />
                             </Link>
                         </div>
                         <div className='col-3'></div>

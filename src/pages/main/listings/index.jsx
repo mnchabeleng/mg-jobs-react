@@ -10,7 +10,7 @@ import Search from '../../../components/main/listings/search'
 import Listings from '../../../components/main/listings'
 import ListingsPaginaite from '../../../components/main/listings/Paginate'
 
-import ListingsLoader from '../../../loaders/main/listings/Index'
+import ListingsLoader from '../../../loaders/main/listings'
 
 async function fetchData({ queryKey }) {
     const url = queryKey[1]

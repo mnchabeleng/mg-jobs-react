@@ -9,9 +9,7 @@ export default function ListingsLoader({ count }) {
 
     return (
         <div className='listings-loader'>
-            {
-                listings.map((item) => <ListingsLoaderItem key={ item } />)
-            }
+        { listings.map((item) => <ListingsLoaderItem key={ item } />) }
         </div>
     )
 }

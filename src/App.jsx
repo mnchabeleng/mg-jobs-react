@@ -10,6 +10,7 @@ const LazyHomePage = lazy(() => import('./pages/main/Home'))
 const LazyListingsPage = lazy(() => import('./pages/main/listings'))
 const LazyListingDetailsPage = lazy(() => import('./pages/main/listings/Details'))
 const LazyListingApplyPage = lazy(() => import('./pages/main/listings/Apply'))
+const LazyError404Page = lazy(() => import('./pages/main/errors/Error404'))
 
 export default function App() {
   return (
@@ -30,6 +31,10 @@ export default function App() {
         <Route
           path='/listings/:listingSlug/apply'
           element={ <Suspense fallback={ <PageLoader /> }><LazyListingApplyPage /></Suspense> } />
+
+        <Route
+          path='*'
+          element={ <Suspense fallback={ <PageLoader /> }><LazyError404Page /></Suspense> } />
       </Routes>
     </BrowserRouter>
   )

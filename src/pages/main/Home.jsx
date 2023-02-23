@@ -11,7 +11,8 @@ import Search from '../../components/main/listings/search'
 import Listings from '../../components/main/listings'
 import Posts from '../../components/main/posts'
 
-import ListingsLoader from '../../loaders/main/listings/Index'
+import ListingsLoader from '../../loaders/main/listings'
+import PostsLoader from '../../loaders/main/posts'
 
 const {
     VITE_REACT_MG_JOBS_WP_API: jobsApiUrl,
@@ -128,7 +129,7 @@ export default function HomePage() {
                             Visit MG.CO.ZA &rarr;
                         </a>
                     </div>
-                    { postsIsFetching ? 'Loading...' : <Posts data={ postsData } /> }
+                    { postsIsFetching ? <PostsLoader count={ 4 } /> : <Posts data={ postsData } /> }
                 </div>
             </section>
         </MainLayout>
