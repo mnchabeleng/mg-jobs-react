@@ -66,6 +66,10 @@
             font-weight: inherit;
             text-transform: uppercase;
         }
+
+        .listing-item-location {
+            font-weight: 600;
+        }
     }
 
     @media (min-width: 640px) {
@@ -84,14 +88,20 @@
     }
 }
 
-.listing-details-file {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: $lightGray;
-    border: 1px solid $gray;
-    border-radius: 3px;
-    padding: 10px;
+.listing-content {
+    margin-bottom: 25px;
+}
+
+.listing-attachment {
+    .title {
+        margin: 0;
+    }
+
+    a {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
 }
 
 .listing-details-meta {
@@ -101,6 +111,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .listing-details-author {
@@ -112,8 +123,70 @@
     border-radius: 5px;
 
     .listing-details-author-image {
-        width: 45px;
-        height: 45px;
+        width: 80px;
+        height: 80px;
         border-radius: 3px;
+        background-color: $gray;
+
+        img {
+            @include fitImageToParent();
+        }
+    }
+}
+
+.share-listing {
+    margin-bottom: 15px;
+
+    .share-listing-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .share-listing-icons {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+
+        a {
+            width: 30px;
+            height: 30px;
+            color: $white;
+            background-color: $black;
+            display: block;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        a.facebook {
+            background-color: $facebookColor;
+        }
+
+        a.twitter {
+            background-color: $twitterColor;
+        }
+
+        a.whatsapp {
+            background-color: $whatsappColor;
+        }
+
+        a.linkedin {
+            background-color: $linkedinColor;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .share-listing-title {
+            margin-bottom: 0;
+        }
     }
 }

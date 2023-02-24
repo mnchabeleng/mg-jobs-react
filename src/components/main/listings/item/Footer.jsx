@@ -7,12 +7,12 @@ export default function ListingItemFooter({ data }) {
 
     return (
         <div className='listing-item-footer'>
-            <div>
-                { listingProvince + ', ' + listingLocation }
-            </div>
-            <div className='listing-item-date'>
-                { date }
-            </div>
+            {
+                (listingProvince && listingLocation)
+                && <div className='listing-item-location'>{ listingProvince + ', ' + listingLocation }</div>
+            }
+
+            <div className='listing-item-date'>{ date }</div>
         </div>
     )
 }

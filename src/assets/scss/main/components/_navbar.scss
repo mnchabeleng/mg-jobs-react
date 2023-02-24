@@ -6,16 +6,24 @@
         background-color: $navbarBgColor;
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .container {
+            flex-basis: $containerWidth;
+            display: flex;
+        }
 
         .menu-toggle {
             cursor: pointer;
             padding: 5px;
+            color: $white;
+            font-size: 2rem;
         }
     
         .menu {
             display: none;
-            gap: 10px;
+            gap: 20px;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -23,9 +31,13 @@
             a {
                 color: $navbarLinkColor;
                 text-decoration: none;
+
+                &:hover,
+                &.active {
+                    text-decoration: underline;
+                }
             }
         }
-    
     }
 
     .menu-mobile {

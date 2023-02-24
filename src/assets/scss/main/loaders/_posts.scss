@@ -11,39 +11,9 @@
             border: 1px solid $lightGray;
             margin-bottom: 20px;
 
-            background: linear-gradient(256deg, $gray, $lightGray);
+            background: $loaderBg;
             background-size: 250% 250%;
             animation: block-loading 1s ease infinite;
-        }
-
-        .post-item-loader-text-w100, 
-        .post-item-loader-text-w80, 
-        .post-item-loader-text-w60, 
-        .post-item-loader-text-w40 {
-            height: 10px;
-            border-radius: 50px;
-            border: 1px solid $lightGray;
-            margin-bottom: 6px;
-
-            background: linear-gradient(256deg, $gray, $lightGray);
-            background-size: 250% 250%;
-            animation: block-loading 1s ease infinite;
-        }
-
-        .post-item-loader-text-w100 {
-            width: 100%;
-        }
-
-        .post-item-loader-text-w80 {
-            width: 80%;
-        }
-
-        .post-item-loader-text-w60 {
-            width: 60%;
-        }
-
-        .post-item-loader-text-w40 {
-            width: 40%;
         }
     }
 

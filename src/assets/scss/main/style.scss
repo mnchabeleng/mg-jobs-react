@@ -1,5 +1,6 @@
 .main-layout {
     @import "./variables.scss";
+    @import "./mixins.scss";
     @import "./animations.scss";
     @import "./global.scss";
     @import "./layouts.scss";
@@ -18,8 +19,10 @@
     @import "./components/posts.scss";
     @import "./components/newsletter.scss";
     @import "./components/footer.scss";
+    @import "./components/sidebar.scss";
 
     @import "./loaders/page.scss";
+    @import "./loaders/text.scss";
     @import "./loaders/search.scss";
     @import "./loaders/listings.scss";
     @import "./loaders/posts.scss";

@@ -11,7 +11,7 @@
         border-radius: 3px;
         border: 1px solid $lightGray;
 
-        background: linear-gradient(256deg, $gray, $lightGray);
+        background: $loaderBg;
         background-size: 250% 250%;
         animation: block-loading 1s ease infinite;
     }

@@ -4,8 +4,8 @@ Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
 $headingFont: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
 
 /** Sizes */
-$containerWidth: 1100px;
-$sidebarWidth: 320px;
+$containerWidth: 1200px;
+$sidebarWidth: 350px;
 $navbarHeight: 50px;
 $footerHeight: 40px;
 $topNavbarHeight: 30px;
@@ -25,6 +25,11 @@ $gray: #d1d5db;
 $lightGray: #f3f4f6;
 $darkGray: #4b5563;
 
+$facebookColor: #3b5998;
+$twitterColor: #26a7de;
+$whatsappColor: #25D366;
+$linkedinColor: #0e76a8;
+
 $bgColor: inherit;
 $navbarBgColor: $black;
 $navbarLinkColor: $white;
@@ -34,3 +39,5 @@ $topNavbarBgColor: $black;
 $heroBgColor: $lightGray;
 $heroOverlayColor: rgba($black, 0.6);
 $listingItemBgColor: $lightGray;
+
+$loaderBg: linear-gradient(256deg, $gray, $lightGray);

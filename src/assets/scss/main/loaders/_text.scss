@@ -1,0 +1,40 @@
+.title-loader-w100,
+.title-loader-w80,
+.loader-text-w100, 
+.loader-text-w80, 
+.loader-text-w60, 
+.loader-text-w40 {
+    height: 13px;
+    border-radius: 50px;
+    border: 1px solid $lightGray;
+    margin-bottom: 6px;
+
+    background: $loaderBg;
+    background-size: 250% 250%;
+    animation: block-loading 1s ease infinite;
+}
+
+.title-loader-w100,
+.title-loader-w80 {
+    height: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.title-loader-w100,
+.loader-text-w100 {
+    width: 100%;
+}
+
+.title-loader-w80,
+.loader-text-w80 {
+    width: 80%;
+}
+
+.loader-text-w60 {
+    width: 60%;
+}
+
+.loader-text-w40 {
+    width: 40%;
+}

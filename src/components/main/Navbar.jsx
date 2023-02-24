@@ -7,15 +7,16 @@ export default function Navbar() {
 
     return (
         <div className='navbar'>
-            <div className='container'>
             <nav>
-                <div onClick={ () => setMobileMenu(prev => !prev) } className='menu-toggle'>
-                    { !mobileMenu ? <RiMenuLine /> : <RiCloseLine /> }
+                <div className='container'>
+                    <div onClick={ () => setMobileMenu(prev => !prev) } className='menu-toggle'>
+                        { !mobileMenu ? <RiMenuLine /> : <RiCloseLine /> }
+                    </div>
+                    <ul className='menu'>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/listings' end>Listings</NavLink></li>
+                    </ul>
                 </div>
-                <ul className='menu'>
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/listings' end>Listings</NavLink></li>
-                </ul>
             </nav>
             {
                 mobileMenu
@@ -24,7 +25,6 @@ export default function Navbar() {
                     <li><NavLink to='/listings' end>Listings</NavLink></li>
                 </ul>
             }
-            </div>
         </div>
     )
 }

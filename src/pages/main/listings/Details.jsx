@@ -8,6 +8,7 @@ import { useQueryOptions } from '../../../config'
 
 import ListingDetailsHeader from '../../../components/main/listings/details/Header'
 import ListingDetailsBody from '../../../components/main/listings/details/Body'
+import ListingDetailsFooter from '../../../components/main/listings/details/Footer'
 
 const {
     VITE_REACT_MG_JOBS_WP_API: jobsApiUrl,
@@ -45,14 +46,17 @@ export default function ListingDetailsPage() {
         <MainSidebarLayout title={ data[0]?.title.rendered } description={ data[0]?.title.rendered }>
             <section className='px'>
                 <div className='container'>
-                    {
-                        isFetching
-                        ? <div>Loading...</div>
-                        : <>
-                            <ListingDetailsHeader data={ data[0] ?? [] } />
-                            <ListingDetailsBody data={ data[0] ?? [] } />
-                        </>
-                    }
+                    <ListingDetailsHeader
+                        data={ data[0] ?? [] }
+                        isFetching={ isFetching } />
+
+                    <ListingDetailsBody
+                        data={ data[0] ?? [] }
+                        isFetching={ isFetching } />
+
+                    <ListingDetailsFooter
+                        data={ data[0] ?? [] }
+                        isFetching={ isFetching } />
                 </div>
             </section>
         </MainSidebarLayout>
