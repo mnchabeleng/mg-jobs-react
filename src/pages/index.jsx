@@ -17,10 +17,7 @@ const description = 'Mail & Guardian offers listings to tenders and jobs in the 
 
 export default function HomePage() {
     const { loading, error, data: mgListings } = useQuery(GET_LISTINGS)
-    //const { data: mgPosts } = getMgPosts()
-
-    mgListings && console.log(mgListings)
-    //mgPosts && console.log(mgPosts)
+    const { data: mgPosts } = getMgPosts()
 
     return (
         <MainLayout>
@@ -56,6 +53,7 @@ export default function HomePage() {
                     <div className="flex items-center justify-between">
                         <SectionTitle>MG Posts</SectionTitle>
                     </div>
+                    { mgPosts && <Posts data={ mgPosts } /> }
                 </Container>
             </Section>
         </MainLayout>

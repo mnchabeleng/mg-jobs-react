@@ -1,6 +1,6 @@
 export default function ListingItem() {
   return (
-        <div className="group bg-gray-900 p-2 rounded-sm transition-all duration-300">
+        <div className="group bg-gray-900 p-4 rounded-sm transition-all duration-300">
           <div className="flex items-center gap-x-2">
             <img className="aspect-[2/2] w-16" src="https://img.icons8.com/fluency/48/null/mac-os.png" />
             <div>
@@ -21,7 +21,6 @@ export default function ListingItem() {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium text-gray-50">Full Time</span>
-            <a className="font-medium text-blue-500 transition-all duration-300 group-hover:text-blue-500/80">Apply Now</a>
           </div>
         </div>
   )

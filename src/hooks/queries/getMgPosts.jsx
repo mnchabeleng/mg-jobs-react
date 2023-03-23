@@ -1,14 +1,12 @@
 import { useQuery } from 'react-query'
+import fetchData from '../../helpers/fetchData'
 
-async function fetchData({ queryKey }) {
-    const url = queryKey[1]
-    //return 'hello world'
-    return fetch(url).then(res => res.json())
-}
-
-const getMgPosts = () => {
+export default function getMgPosts() {
     const postsUrl = `https://mg.co.za/wp-json/wp/v2/posts?_embed&per_page=4`
-    return useQuery(['mg-posts-api-data', postsUrl], fetchData)
+    return useQuery(['mg-posts-api-data', postsUrl], fetchData, {
+        refetchOnWindowFocus: false,
+        refetchOnmount: false,
+        refetchOnReconnect: false,
+        retry: false
+    })
 }
-
-export default getMgPosts
