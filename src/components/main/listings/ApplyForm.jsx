@@ -31,7 +31,10 @@ export default function ListingApplyForm() {
             url: apiUrl + '/apply',
             method: 'post',
             data: formData,
-            headers: { 'Content-Type': 'multipart/form-data' },
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'multipart/form-data'
+            },
         })
         .then(response => response.data)
         .then(data => {
