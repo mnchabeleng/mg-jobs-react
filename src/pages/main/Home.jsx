@@ -41,7 +41,8 @@ export default function HomePage() {
         isFetching: jobsIsFetching
     } = useQuery(['jobs-api-data', jobsUrl], fetchData, useQueryOptions)
 
-    const tendersUrl = `${ jobsApiUrl }/mg_jobs?_embed&mg_job_types=${ tendersId }&per_page=4`
+    //const tendersUrl = `${ jobsApiUrl }/mg_jobs?_embed&mg_job_types=${ tendersId }&per_page=4`
+    const tendersUrl = `https://staging-jobsmgco-staging.kinsta.cloud/wp-json/wp/v2/job-listings?job_type=${ jobsId }&_embed&per_page=1`
     const {
         data: tendersData,
         error: tendersError,
@@ -96,12 +97,12 @@ export default function HomePage() {
                         <h2 className='section-title'>Jobs</h2>
                         <Link to={ `/listings?type=${ jobsId }` }>View more jobs &rarr;</Link>
                     </div>
-                    { jobsIsFetching
+                    {/* { jobsIsFetching
                         ? <ListingsLoader count={ 8 } />
                         : <>
                             <Listings data={ jobsData } /> 
                         </>
-                    }
+                    } */}
                 </div>
             </section>
             <section className='px'>
@@ -110,12 +111,12 @@ export default function HomePage() {
                         <h2 className='section-title'>Tenders</h2>
                         <Link to={ `/listings?type=${ tendersId }` }>View more tenders &rarr;</Link>
                     </div>
-                    { tendersIsFetching
+                    {/* { tendersIsFetching
                         ? <ListingsLoader count={ 4 } />
                         : <>
                             <Listings data={ tendersData } />
                         </>
-                    }
+                    } */}
                 </div>
             </section>
             <section className='px'>

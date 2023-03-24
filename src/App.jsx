@@ -20,7 +20,7 @@ export default function App() {
           index
           element={ <Suspense fallback={ <PageLoader /> }><LazyHomePage /></Suspense> } />
 
-        <Route
+        {/* <Route
           path='/listings'
           element={ <Suspense fallback={ <PageLoader /> }><LazyListingsPage /></Suspense> } />
 
@@ -30,7 +30,7 @@ export default function App() {
 
         <Route
           path='/listings/:listingSlug/apply'
-          element={ <Suspense fallback={ <PageLoader /> }><LazyListingApplyPage /></Suspense> } />
+          element={ <Suspense fallback={ <PageLoader /> }><LazyListingApplyPage /></Suspense> } /> */}
 
         <Route
           path='*'
