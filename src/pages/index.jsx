@@ -1,7 +1,7 @@
 import MainLayout from '../layouts/MainLayout'
-import { useQuery } from '@apollo/client'
-import GET_LISTINGS from '../graphql/queries/getHomePageListings'
-import getMgPosts from '../hooks/queries/getMgPosts'
+import { Link } from 'react-router-dom'
+import { fetchMgJobs, fetchMgTenders } from '../hooks/queries/getMgListings'
+import fetchMgPosts from '../hooks/queries/getMgPosts'
 import heroBgImage from '../assets/img/johannesburg-cbd.jpg'
 
 import Section from '../components/html/Section'
@@ -13,6 +13,7 @@ import Anchor from '../components/html/Anchor'
 import SearchForm from '../components/SearchForm'
 import Listings from '../components/listings'
 import Posts from '../components/posts'
+import NewsLetterForm from '../components/NewsLetterForm'
 
 const title = 'Mail & Guardian Jobs'
 const description = 'Mail & Guardian offers listings to tenders and jobs in the non-profit, academic and government sectors.'
@@ -24,16 +25,16 @@ const heroStyles = {
 
 export default function HomePage() {
     const {
-        loading: mgListingsLoading,
-        error: mgListingsError,
-        data: mgListings
-    } = useQuery(GET_LISTINGS)
+        data: mgJobs
+    } = fetchMgJobs()
+
+    const {
+        data: mgTenders
+    } = fetchMgTenders()
 
     const {
         data: mgPosts
-    } = getMgPosts()
-
-    console.log(mgListings)
+    } = fetchMgPosts()
 
     return (
         <MainLayout>
@@ -41,10 +42,10 @@ export default function HomePage() {
                 style={ heroStyles }
                 className="py-20">
                 <Container>
-                    <PageTitle className="text-center">
+                    <PageTitle className="text-center text-gray-100">
                         { title }
                     </PageTitle>
-                    <p className="text-center text-xl mb-6">
+                    <p className="text-center text-xl mb-6 text-gray-100">
                         { description }
                     </p>
                     <SearchForm />
@@ -52,32 +53,43 @@ export default function HomePage() {
             </Section>
             <Section>
                 <Container>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-6">
                         <SectionTitle>Jobs</SectionTitle>
+                        <Link
+                            className="font-bold"
+                            to={ `/listings` }>View more jobs &rarr;</Link>
                     </div>
-                    <Listings />
+                    { mgJobs && <Listings data={ mgJobs } /> }
                 </Container>
             </Section>
             <Section>
                 <Container>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-6">
                         <SectionTitle>Tenders</SectionTitle>
+                        <Link
+                            className="font-bold"
+                            to={ `/listings` }>View more tenders &rarr;</Link>
                     </div>
                     <Listings />
                 </Container>
             </Section>
             <Section>
                 <Container>
-                    <div className="flex items-center justify-between">
-                        <SectionTitle>Newsletter</SectionTitle>
+                    <div className="py-8 px-4 flex justify-center items-center bg-red-700 rounded-md">
+                        <div className="text-gray-100 text-center">
+                            <h3 className="font-bold text-2xl lg:text-3xl">Neswletter</h3>
+                            <p className="text-lg mb-6">Subscribe to our newsletter and get notified by email as soon as new jobs/tenders are posted.</p>
+                            <NewsLetterForm />
+                        </div>
                     </div>
                 </Container>
             </Section>
             <Section>
                 <Container>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-6">
                         <SectionTitle>MG Posts</SectionTitle>
                         <Anchor
+                            className="font-bold"
                             href='http://mg.co.za'
                             target='_blank'
                             rel='noopener noreferrer'>

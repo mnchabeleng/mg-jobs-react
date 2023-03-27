@@ -1,6 +1,6 @@
 import ListingItem from "./ListingItem"
 
-export default function Listings() {
+export default function Listings({ data }) {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
       <ListingItem />

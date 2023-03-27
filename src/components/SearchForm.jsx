@@ -13,20 +13,20 @@ export default function SearchForm() {
 
     return (
         <form
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-2 rounded-md"
             onSubmit={ (e) => handleFormSubmit(e) }>
             <div className="flex flex-col gap-2 md:flex-row">
                 <div className="flex-grow">
                     <Input
-                        placeholder="Keyword" />
+                        placeholder="Keyword..." />
                 </div>
                 <div className="flex-grow">
                     <Input
-                        placeholder="Sector" />
+                        placeholder="Sector..." />
                 </div>
                 <div className="flex-grow">
                     <Input
-                        placeholder="Location" />
+                        placeholder="Location..." />
                 </div>
             </div>
             <div className="flex flex-col md:flex-row gap-4 mb-4">
@@ -37,17 +37,12 @@ export default function SearchForm() {
                     Part Time
                 </CheckBox>
                 <CheckBox>
-                    Freelance
-                </CheckBox>
-                <CheckBox>
-                    Contract
-                </CheckBox>
-                <CheckBox>
                     Tender
                 </CheckBox>
             </div>
             <div>
-                <Button className="flex items-center gap-2 bg-red-600">
+                <Button
+                    className="flex items-center gap-2 bg-red-600 hover:bg-red-700 active:bg-red-700">
                     <RiSearchLine />
                     Search
                 </Button>

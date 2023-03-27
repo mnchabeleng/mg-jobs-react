@@ -6,7 +6,7 @@ export default function PostItem({ data }) {
     const thumbnailImage = data?._embedded['wp:featuredmedia'][0]?.media_details?.sizes?.thumbnail?.source_url
 
     let title = data?.title.rendered ?? ''
-    title = title.length > 40 ? title.substring(0, 40) + '...' : title
+    title = title.length > 55 ? title.substring(0, 55) + '...' : title
 
     const postLink = data.link
 
@@ -20,7 +20,7 @@ export default function PostItem({ data }) {
     return (
         <div className="flex gap-3 md:flex-col">
             <div>
-                <div className="h-32 w-32 md:w-auto md:h-60 xl:h-44 bg-slate-600 rounded-sm">
+                <div className="h-32 w-32 md:w-auto md:h-72 xl:h-44 bg-slate-600 rounded-sm">
                     <a
                         href={ postLink }
                         target='_blank'
