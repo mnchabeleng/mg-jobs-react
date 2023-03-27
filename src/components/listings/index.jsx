@@ -1,12 +1,16 @@
 import ListingItem from "./ListingItem"
+import NoListings from "./NoListings"
 
 export default function Listings({ data }) {
   return (
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-      <ListingItem />
-      <ListingItem />
-      <ListingItem />
-      <ListingItem />
-    </div>
+    <>
+    {
+      (data && data.length > 0)
+      ? <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 xl:grid-cols-4">
+        { data.map((item, index) => <ListingItem key={ index } data={ item } />) }
+      </div>
+      : <NoListings />
+    }
+    </>
   )
 }

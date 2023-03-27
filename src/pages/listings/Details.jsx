@@ -1,9 +1,13 @@
 import MainLayout from '../../layouts/MainLayout'
 
+import Section from '../../components/html/Section'
+import Container from '../../components/Container'
+import PageTitle from '../../components/PageTitle'
+
 export default function ListingDetails() {
   return (
-    <>
-      Listing Details 
-    </>
+    <MainLayout>
+      Listing Details
+    </MainLayout>
   )
 }

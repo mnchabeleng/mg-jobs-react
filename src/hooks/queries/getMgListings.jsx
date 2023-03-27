@@ -22,10 +22,15 @@ export function fetchMgTenders() {
 }
 
 export function fetchMgListings() {
-    const listingsUrl = 'https://staging-jobsmgco-staging.kinsta.cloud/wp-json/wp/v2/mg-jobs?_embed'
-    return ''
+    const listingsUrl = 'https://staging-jobsmgco-staging.kinsta.cloud/wp-json/wp/v2/mg-jobs?_embed&per_page=16'
+    return useQuery(['mg-listings-api-data', listingsUrl], fetchData, {
+        refetchOnWindowFocus: false,
+        refetchOnmount: false,
+        refetchOnReconnect: false,
+        retry: false
+    })
 }
 
-export function fetchMgListing() {
+export function fetchMgListing(slug) {
     return ''
 }

@@ -46,7 +46,7 @@ export default function PostItem({ data }) {
                         dangerouslySetInnerHTML={{ __html: title }} />
                 </h3>
 
-                <ul className="flex gap-2 mb-4">
+                <ul className="flex gap-2 mb-4 text-sm">
                     <li>{ momentsAgo(postsDate) }</li>
                     &bull;
                     <li>{ postCategory }</li>

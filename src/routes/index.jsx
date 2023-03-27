@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const HomePage = lazy(() => import("../pages"));
 const ListingsPage = lazy(() => import("../pages/listings"));
-const ListingDetailsPage = lazy(() => import("../pages/main/listings/Details"));
+const ListingDetailsPage = lazy(() => import("../pages/listings/Details"));
 const ListingApplyPage = lazy(() => import("../pages/main/listings/Apply"));
 const Error404Page = lazy(() => import("../pages/Error404"));
 

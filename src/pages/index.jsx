@@ -12,6 +12,7 @@ import Anchor from '../components/html/Anchor'
 
 import SearchForm from '../components/SearchForm'
 import Listings from '../components/listings'
+import ListingsLoader from '../loaders/listings'
 import Posts from '../components/posts'
 import NewsLetterForm from '../components/NewsLetterForm'
 
@@ -59,7 +60,11 @@ export default function HomePage() {
                             className="font-bold"
                             to={ `/listings` }>View more jobs &rarr;</Link>
                     </div>
-                    { mgJobs && <Listings data={ mgJobs } /> }
+                    {
+                        mgJobs
+                        ? <Listings title="Jobs" data={ mgJobs } />
+                        : <ListingsLoader count={ 8 } />
+                    }
                 </Container>
             </Section>
             <Section>
@@ -70,7 +75,11 @@ export default function HomePage() {
                             className="font-bold"
                             to={ `/listings` }>View more tenders &rarr;</Link>
                     </div>
-                    <Listings />
+                    {
+                        mgTenders
+                        ? <Listings title="Tenders" data={ mgTenders } />
+                        : <ListingsLoader count={ 4 } />
+                    }
                 </Container>
             </Section>
             <Section>

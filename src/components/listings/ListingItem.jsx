@@ -1,27 +1,47 @@
-export default function ListingItem() {
+import { Link } from 'react-router-dom'
+import { RiMapPin2Fill, RiTimer2Line } from 'react-icons/ri'
+import { momentsAgo } from '../../helpers/time'
+
+export default function ListingItem({ data }) {
+  const slug = data?.slug
+  const companyName = data?._embedded['wp:term'][2][0]?.name
+  const region = data?._embedded['wp:term'][1][0]?.name
+
+  let title = data?.title?.rendered
+  title = (title.length > 55) ? title.substring(0, 55) + '...' : title
+  const sectors = data?._embedded['wp:term'][3]
+
+  const date = data?.date
+  const type = data?._embedded['wp:term'][0][0]?.name
+
   return (
-        <div className="group bg-gray-900 p-4 rounded-sm transition-all duration-300">
-          <div className="flex items-center gap-x-2">
-            <img className="aspect-[2/2] w-16" src="https://img.icons8.com/fluency/48/null/mac-os.png" />
-            <div>
-              <h3 className="text-xl font-bold text-gray-50">Apple</h3>
-              <span className="text-xs text-gray-300">New location, USA</span>
-            </div>
-          </div>
-          <div className="my-4">
-            <h3 className="text-2xl font-medium text-gray-200">UI/UX Designer</h3>
-            <div className="text-sm font-medium">
-              <span className="m-1 ml-0 inline-block text-blue-500">HTML</span>
-              <span className="m-1 ml-0 inline-block text-yellow-500">CSS</span>
-              <span className="m-1 ml-0 inline-block text-pink-500">FIGMA</span>
-              <span className="m-1 ml-0 inline-block text-lime-500">Ad. XD</span>
-              <span className="m-1 ml-0 inline-block text-blue-500">Illustrator</span>
-            </div>
-            <div className="mt-2 text-sm text-gray-400">$60K - $100K per year</div>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-50">Full Time</span>
-          </div>
+    <Link
+      to={ `/listings/${ slug }` }
+      className="flex flex-col justify-between gap-4 p-4 min-h-[200px] shadow-lg border border-gray-100 rounded-sm transition-all duration-300">
+      <div>
+        <div className="font-semibold">{ companyName && <>{ companyName }</> }</div>
+        { region && <div className="flex items-center gap-2 text-sm"><RiMapPin2Fill />{ region }</div> }
+      </div>
+      <div>
+        <h3
+          className="font-bold"
+          dangerouslySetInnerHTML={{ __html: title }} />
+        <div className="text-sm">
+          { 
+            (sectors.length > 0)
+            && sectors.map((item, index) => (
+            <div
+              key={ index }
+              className="inline-block">
+              { (index > 0) && ', ' }{ item.name }
+            </div> ))
+          }
         </div>
+      </div>
+      <div className="flex justify-between items-center text-sm">
+        <div>{ type && type }</div>
+        <div className="flex items-center gap-2"><RiTimer2Line/>{ date && momentsAgo(date) }</div>
+      </div>
+    </Link>
   )
 }

@@ -114,7 +114,7 @@ export default function NewsLetterForm() {
                     placeholder="Name and Surname"
                     value={ name }
                     onChange={ (e) => nameInputChange(e) } />
-                { (nameResponse.type && nameResponse.message) && <div>{ nameResponse.message }</div> }
+                { (nameResponse.type && nameResponse.message) && <div className="text-sm">{ nameResponse.message }</div> }
             </div>
             <div>
                 <Label>Email Address</Label>
@@ -123,10 +123,10 @@ export default function NewsLetterForm() {
                     placeholder="Email Address"
                     value={ email }
                     onChange={ (e) => emailInputChange(e) } />
-                { (emailResponse.type && emailResponse.message) && <div>{ emailResponse.message }</div> }
+                { (emailResponse.type && emailResponse.message) && <div className="text-sm">{ emailResponse.message }</div> }
             </div>
             <Button
-                className=" bg-gray-900 hover:bg-black active:bg-black">
+                className=" bg-gray-900 hover:bg-[#000] active:bg-[#000">
                 { formLoading ? 'Loading...' : 'Subscribe' }</Button>
         </form>
     )

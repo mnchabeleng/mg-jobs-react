@@ -1,6 +1,9 @@
 import MainLayout from '../../layouts/MainLayout'
+import { fetchMgListings } from '../../hooks/queries/getMgListings'
 import heroBgImage from '../../assets/img/johannesburg-cbd.jpg'
 
+import MGListings from '../../components/listings'
+import ListingsLoader from '../../loaders/listings'
 import Section from '../../components/html/Section'
 import Container from '../../components/Container'
 import PageTitle from '../../components/PageTitle'
@@ -16,6 +19,10 @@ const heroStyles = {
 }
 
 export default function Listings() {
+  const {
+    data: mgListings
+  } = fetchMgListings()
+
   return (
     <MainLayout title={ title } description={ description }>
       <Section
@@ -33,7 +40,11 @@ export default function Listings() {
       </Section>
       <Section>
         <Container>
-          Listings
+          {
+            mgListings
+            ? <MGListings data={ mgListings } />
+            : <ListingsLoader count={ 16 } />
+          }
         </Container>
       </Section>
     </MainLayout>
