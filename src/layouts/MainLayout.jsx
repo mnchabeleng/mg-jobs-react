@@ -9,7 +9,7 @@ export default function MainLayout({ children, title, description }) {
                 <title>{ title }</title>
                 <meta name="description" content={ description } />
             </Helmet>
-            <main className="min-h-screen relative">
+            <main className="min-h-screen relative pb-14">
                 <Header />
                 { children }
                 <Footer />

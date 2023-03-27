@@ -9,7 +9,7 @@ export default function Container(props) {
     
     return (
         <div
-            className={ classes.concat(" ", "max-w-5xl mx-auto") }
+            className={ classes.concat(" ", "max-w-6xl mx-auto") }
             { ...restOfProps }>
             { children }
         </div>

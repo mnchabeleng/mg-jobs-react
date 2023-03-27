@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 function formatMomentsAgoString(dateTimeVal, dateTimeStr) {
-    return dateTimeVal + (dateTimeVal > 1 ? ` ${ dateTimeStr }s` : dateTimeStr) + ' ago'
+    return dateTimeVal + (dateTimeVal > 1 ? ` ${ dateTimeStr }s` : ` ${ dateTimeStr }`) + ' ago'
 }
 
 export function defaultDate(dateTime) {

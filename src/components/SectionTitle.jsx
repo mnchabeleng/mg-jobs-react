@@ -9,7 +9,7 @@ export default function SectionTitle(props) {
 
     return (
         <h2
-            className={ classes.concat(" ", "text-xl mb-6 font-bold md:text-2xl") }
+            className={ classes.concat(" ", "text-2xl mb-6 font-bold md:text-3xl") }
             { ...restOfProps }>
             { children }
         </h2>
