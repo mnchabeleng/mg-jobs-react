@@ -5,11 +5,11 @@ export default function PageTitle(props) {
         ...restofProps
     } = props
 
-    const classes = className ?? ''
+    const classes = "mb-6 font-bold text-3xl sm:text-4xl"
 
     return (
         <h1
-            className={ classes.concat(" ", "text-3xl mb-6 font-bold sm:text-4xl") }
+            className={ classes.concat(" ", className ?? "") }
             { ...restofProps }>
             { children }
         </h1>

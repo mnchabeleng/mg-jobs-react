@@ -1,13 +1,26 @@
-import MainLayout from '../../layouts/MainLayout'
+import SidebarLayout from '../../layouts/SidebarLayout'
+import { useParams } from 'react-router-dom'
 
 import Section from '../../components/html/Section'
-import Container from '../../components/Container'
 import PageTitle from '../../components/PageTitle'
+import SectionTitle from '../../components/SectionTitle'
 
 export default function ListingDetails() {
+  const { listingSlug } = useParams()
+
   return (
-    <MainLayout>
-      Listing Details
-    </MainLayout>
+    <SidebarLayout>
+      <Section>
+        <PageTitle className="text-lg">
+          Listing Details
+        </PageTitle>
+      </Section>
+      <Section>
+
+      </Section>
+      <Section>
+
+      </Section>
+    </SidebarLayout>
   )
 }

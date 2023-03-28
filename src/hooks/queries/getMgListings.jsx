@@ -34,3 +34,7 @@ export function fetchMgListings() {
 export function fetchMgListing(slug) {
     return ''
 }
+
+export function fetchMgSimilarListings(tags) {
+    return ''
+}

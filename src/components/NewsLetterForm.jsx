@@ -4,6 +4,15 @@ import Input from './html/form/Input'
 import Button from './html/form/Button'
 import Label from './html/form/Label'
 
+const messages = {
+    name: {
+        error: 'Provide a name, minimum 3 characters'
+    },
+    email: {
+        error: 'Provide a valid email address'
+    }
+}
+
 export default function NewsLetterForm() {
     const [name, setName] = useState('')
     const [nameResponse, setNameResponse] = useState({
@@ -30,7 +39,7 @@ export default function NewsLetterForm() {
         if(!validName(name)) {
             setNameResponse({
                 type: 'error',
-                message: 'Provide name, minimum 3 characters'
+                message: 'Provide a name, minimum 3 characters'
             })
         } else {
             setNameResponse({
@@ -71,7 +80,7 @@ export default function NewsLetterForm() {
         if(!validName(name)) {
             setNameResponse({
                 type: 'error',
-                message: 'Provide name, minimum 3 characters'
+                message: 'Provide a name, minimum 3 characters'
             })
         } else {
             setNameResponse({

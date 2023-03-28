@@ -6,7 +6,7 @@ export default function ListingsLoader({ count }) {
     }
 
     return (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 xl:grid-cols-4">
         {
             listings.map((item, index) => (
                 <div
