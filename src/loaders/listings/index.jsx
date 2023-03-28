@@ -11,7 +11,7 @@ export default function ListingsLoader({ count }) {
             listings.map((item, index) => (
                 <div
                     key={ index }
-                    className="flex items-center justify-center min-h-[200px] max-w-sm bg-gray-300 rounded-sm animate-pulse dark:bg-gray-700">
+                    className="flex items-center justify-center min-h-[200px] bg-gray-300 rounded-sm animate-pulse dark:bg-gray-700">
                     <span className="sr-only">Loading...</span>
                 </div>
             )) 

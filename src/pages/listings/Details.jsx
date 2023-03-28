@@ -1,26 +1,68 @@
 import SidebarLayout from '../../layouts/SidebarLayout'
+import { useState, lazy, Suspense } from 'react'
 import { useParams } from 'react-router-dom'
+import { momentsAgo, defaultDate } from '../../helpers/time'
+import { fetchMgListing } from '../../hooks/queries/getMgListings'
+import ShareListing from '../../components/listings/ShareListing'
 
 import Section from '../../components/html/Section'
-import PageTitle from '../../components/PageTitle'
-import SectionTitle from '../../components/SectionTitle'
+
+const ListingApplyModal = lazy(() => import('../../components/listings/ListingApplyModal'))
 
 export default function ListingDetails() {
+  let [isOpen, setIsOpen] = useState(false)
   const { listingSlug } = useParams()
 
+  const { data: mgListsing, isLoading } = fetchMgListing(listingSlug)
+
+  if(isLoading) return <>Loading...</>
+
+  const title = mgListsing[0]?.title?.rendered
+  const content = mgListsing[0]?.content?.rendered
+
+  const companyName = mgListsing[0]?._embedded['wp:term'][2][0]?.name
+  const region = mgListsing[0]?._embedded['wp:term'][1][0]?.name
+  const sectors = mgListsing[0]?._embedded['wp:term'][3]
+  const date = mgListsing[0]?.date
+  const closingDate = mgListsing[0]?.acf?.closing_date
+  const type = mgListsing[0]?._embedded['wp:term'][0][0]?.name
+
   return (
-    <SidebarLayout>
-      <Section>
-        <PageTitle className="text-lg">
-          Listing Details
-        </PageTitle>
-      </Section>
-      <Section>
+    <>
+      {
+        isOpen
+        && <Suspense fallback="Loading...">
+          <ListingApplyModal isOpen={ isOpen } setIsOpen={ setIsOpen } />
+        </Suspense>
+      }
 
-      </Section>
-      <Section>
+      <SidebarLayout>
+        <Section>
+          <h1
+            className="text-xl md:text-2xl font-bold mb-4"
+            dangerouslySetInnerHTML={{ __html: title }} />
+          
+          <div className="mb-4">
+            <div><b>Company:</b> { companyName }</div>
+            <div><b>Region:</b> { region }</div>
+            <div>
+              <b>Sectors:</b>&nbsp;
+              { sectors.map((item, index) => (<div key={ index } className="inline-block">{ (index > 0) && ', ' }{ item.name }</div> )) }
+            </div>
+            <div><b>Type:</b> { type }</div>
+            <div><b>Posted:</b> { momentsAgo(date) }</div>
+            { closingDate && <div><b>Closing:</b> <span className="text-red-600">{ defaultDate(closingDate) }</span></div> }
+          </div>
 
-      </Section>
-    </SidebarLayout>
+          <ShareListing />
+
+          <div
+            className="mb-6"
+            dangerouslySetInnerHTML={{ __html: content }} />
+          
+          <ShareListing />
+        </Section>
+      </SidebarLayout>
+    </>
   )
 }

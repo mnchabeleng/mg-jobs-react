@@ -7,9 +7,9 @@ export default function SidebarLayout({ children, title, description }) {
     return (
         <MainLayout title={ title } description={ description }>
             <Container>
-                <div className="flex flex-col md:flex-row">
-                    <div>{ children }</div>
-                    <div></div>
+                <div className="flex flex-col lg:flex-row">
+                    <div className="flex-1">{ children }</div>
+                    <div className="lg:w-80 p-4"></div>
                 </div>
             </Container>
         </MainLayout>

@@ -22,13 +22,15 @@ export function compareDates(firstDate, secondDate) {
 export function momentsAgo(dateTime) {
     const now = moment()
 
-    const years = now.diff(dateTime, 'years')
-    const months = now.diff(dateTime, 'months')
-    const weeks = now.diff(dateTime, 'weeks')
-    const days = now.diff(dateTime, 'days')
-    const hours = now.diff(dateTime, 'hours')
-    const minutes = now.diff(dateTime, 'minutes')
-    const seconds = now.diff(dateTime, 'seconds')
+    const years = parseInt(now.diff(dateTime, 'years'))
+    const months = parseInt(now.diff(dateTime, 'months'))
+    const weeks = parseInt(now.diff(dateTime, 'weeks'))
+    const days = parseInt(now.diff(dateTime, 'days'))
+    const hours = parseInt(now.diff(dateTime, 'hours'))
+    const minutes = parseInt(now.diff(dateTime, 'minutes'))
+    const seconds = parseInt(now.diff(dateTime, 'seconds'))
+
+    console.log(years, months, weeks, days, hours, minutes, seconds)
 
     if(years > 0) return formatMomentsAgoString(years, 'year')
 

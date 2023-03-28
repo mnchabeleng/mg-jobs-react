@@ -42,7 +42,7 @@ export default function SearchForm() {
             </div>
             <div>
                 <Button
-                    className="flex items-center gap-2 bg-red-600 hover:bg-red-700 active:bg-red-700">
+                    className="flex items-center gap-2 text-gray-100 bg-red-600 hover:bg-red-700 active:bg-red-700">
                     <RiSearchLine />
                     Search
                 </Button>

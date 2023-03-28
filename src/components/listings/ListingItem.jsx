@@ -22,10 +22,12 @@ export default function ListingItem({ data }) {
         <div className="font-semibold">{ companyName && <>{ companyName }</> }</div>
         { region && <div className="flex items-center gap-2 text-sm"><RiMapPin2Fill />{ region }</div> }
       </div>
+
       <div>
         <h3
-          className="font-bold"
+          className="font-bold text-lg"
           dangerouslySetInnerHTML={{ __html: title }} />
+
         <div className="text-sm">
           { 
             (sectors.length > 0)
@@ -38,6 +40,7 @@ export default function ListingItem({ data }) {
           }
         </div>
       </div>
+
       <div className="flex justify-between items-center text-sm">
         <div>{ type && type }</div>
         <div className="flex items-center gap-2"><RiTimer2Line/>{ date && momentsAgo(date) }</div>

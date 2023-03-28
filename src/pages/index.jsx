@@ -21,7 +21,7 @@ const description = 'Mail & Guardian offers listings to tenders and jobs in the 
 
 const heroStyles = {
     backgroundImage: `url(${ heroBgImage })`,
-    boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.6)'
+    boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.7)'
 }
 
 export default function HomePage() {
@@ -96,7 +96,7 @@ export default function HomePage() {
             <Section>
                 <Container>
                     <div className="flex items-center justify-between mb-6">
-                        <SectionTitle>MG Posts</SectionTitle>
+                        <SectionTitle>M&G Latest Posts</SectionTitle>
                         <Anchor
                             className="font-bold"
                             href='http://mg.co.za'
