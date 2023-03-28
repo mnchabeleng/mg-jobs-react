@@ -9,7 +9,7 @@ export default function ErrorLayout({ title, description }) {
         </Helmet>
         <main className="min-h-screen flex justify-center items-center">
             <div className="text-center">
-                <h1>
+                <h1 className="font-bold text-2xl md:text-4xl">
                     <span className="sr-only">Error</span> { title }
                 </h1>
                 <p>

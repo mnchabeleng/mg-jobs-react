@@ -15,7 +15,9 @@ export default function ListingDetails() {
 
   const { data: mgListsing, isLoading } = fetchMgListing(listingSlug)
 
-  if(isLoading) return <>Loading...</>
+  if(isLoading) return <SidebarLayout>
+    <Section>Loading...</Section>
+  </SidebarLayout>
 
   const title = mgListsing[0]?.title?.rendered
   const content = mgListsing[0]?.content?.rendered

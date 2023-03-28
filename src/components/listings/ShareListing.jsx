@@ -13,7 +13,7 @@ export function ShareLink(props) {
     ...restOfProps
   } = props
 
-  const classes = "block p-3 rounded-md text-gray-50"
+  const classes = "block p-2 rounded-md text-gray-50"
 
   return (
     <a
