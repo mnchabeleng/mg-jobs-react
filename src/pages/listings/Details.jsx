@@ -13,13 +13,16 @@ export default function ListingDetails() {
   let [isOpen, setIsOpen] = useState(false)
   const { listingSlug } = useParams()
 
-  const { data: mgListsing, isLoading } = fetchMgListing(listingSlug)
+  const { data: mgListsingData, isLoading } = fetchMgListing(listingSlug)
 
   if(isLoading) return <SidebarLayout>
     <Section>Loading...</Section>
   </SidebarLayout>
 
+  const mgListsing = mgListsingData.data
+
   const title = mgListsing[0]?.title?.rendered
+  const excerpt = mgListsing[0]?.excerpt?.rendered
   const content = mgListsing[0]?.content?.rendered
 
   const companyName = mgListsing[0]?._embedded['wp:term'][2][0]?.name
@@ -33,27 +36,45 @@ export default function ListingDetails() {
     <>
       {
         isOpen
-        && <Suspense fallback="Loading...">
-          <ListingApplyModal isOpen={ isOpen } setIsOpen={ setIsOpen } />
-        </Suspense>
+        &&  <Suspense fallback="Loading...">
+              <ListingApplyModal isOpen={ isOpen } setIsOpen={ setIsOpen } />
+            </Suspense>
       }
 
-      <SidebarLayout>
+      <SidebarLayout
+        title={ title }
+        description={ excerpt }>
         <Section>
           <h1
             className="text-xl md:text-2xl font-bold mb-4"
             dangerouslySetInnerHTML={{ __html: title }} />
           
           <div className="mb-4">
-            <div><b>Company:</b> { companyName }</div>
-            <div><b>Region:</b> { region }</div>
+            <div>
+              <b>Company:</b> { companyName }
+            </div>
+
+            <div>
+              <b>Region:</b> { region }
+            </div>
+
             <div>
               <b>Sectors:</b>&nbsp;
               { sectors.map((item, index) => (<div key={ index } className="inline-block">{ (index > 0) && ', ' }{ item.name }</div> )) }
             </div>
-            <div><b>Type:</b> { type }</div>
-            <div><b>Posted:</b> { momentsAgo(date) }</div>
-            { closingDate && <div><b>Closing:</b> <span className="text-red-600">{ defaultDate(closingDate) }</span></div> }
+
+            <div>
+              <b>Type:</b> { type }
+            </div>
+
+            <div>
+              <b>Posted:</b> { momentsAgo(date) }
+            </div>
+
+            {
+              closingDate
+              && <div><b>Closing:</b> <span className="text-red-600">{ defaultDate(closingDate) }</span></div>
+            }
           </div>
 
           <ShareListing />
@@ -61,6 +82,10 @@ export default function ListingDetails() {
           <div
             className="mb-6"
             dangerouslySetInnerHTML={{ __html: content }} />
+
+          <div className="mb-6">
+            file attachment here
+          </div>
           
           <ShareListing />
         </Section>

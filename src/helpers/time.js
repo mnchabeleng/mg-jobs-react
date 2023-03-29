@@ -30,8 +30,6 @@ export function momentsAgo(dateTime) {
     const minutes = parseInt(now.diff(dateTime, 'minutes'))
     const seconds = parseInt(now.diff(dateTime, 'seconds'))
 
-    console.log(years, months, weeks, days, hours, minutes, seconds)
-
     if(years > 0) return formatMomentsAgoString(years, 'year')
 
     if(months > 0) return formatMomentsAgoString(months, 'month')
