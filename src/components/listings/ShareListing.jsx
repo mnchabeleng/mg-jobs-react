@@ -26,7 +26,7 @@ export function ShareLink(props) {
 
 export default function ShareListing() {
   return (
-    <div className="mb-4 flex items-center justify-between">
+    <div className="mb-4 flex items-center gap-8">
         <div>
           <b>Share Listing</b>
         </div>

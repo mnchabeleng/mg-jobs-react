@@ -1,7 +1,10 @@
 export default function ListingApplyForm() {
   return (
-    <form>
-      
-    </form>
+    <div>
+      Apply
+      <form>
+        
+      </form>
+    </div>
   )
 }

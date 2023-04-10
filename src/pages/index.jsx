@@ -1,5 +1,6 @@
 import MainLayout from '../layouts/MainLayout'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { fetchMgJobs, fetchMgTenders } from '../hooks/queries/getMgListings'
 import fetchMgPosts from '../hooks/queries/getMgPosts'
 
@@ -13,8 +14,14 @@ import Listings from '../components/listings'
 import ListingsLoader from '../loaders/listings'
 import Posts from '../components/posts'
 import NewsLetterForm from '../components/NewsLetterForm'
+import Button from '../components/html/form/Button'
 
-const title = 'Mail & Guardian Jobs'
+const {
+    VITE_REACT_MG_JOB_ID,
+    VITE_REACT_MG_TENDER_ID
+} = import.meta.env
+
+const title = 'Mail & Guardian Jobs and Tenders'
 const description = 'Mail & Guardian offers listings to tenders and jobs in the non-profit, academic and government sectors.'
 
 export default function HomePage() {
@@ -48,7 +55,7 @@ export default function HomePage() {
 
                         <Link
                             className="font-bold"
-                            to={ `/listings` }>View more jobs &rarr;</Link>
+                            to={ `/listings?type=${ VITE_REACT_MG_JOB_ID }` }>View more jobs &rarr;</Link>
                     </div>
 
                     {
@@ -68,7 +75,7 @@ export default function HomePage() {
 
                         <Link
                             className="font-bold"
-                            to={ `/listings` }>View more tenders &rarr;</Link>
+                            to={ `/listings?type=${ VITE_REACT_MG_TENDER_ID }` }>View more tenders &rarr;</Link>
                     </div>
 
                     {
@@ -101,7 +108,7 @@ export default function HomePage() {
                 <Container>
                     <div className="flex items-center justify-between mb-6">
                         <SectionTitle>
-                            M&G Latest Posts
+                            M<span className="text-red-600">&</span>G Latest Posts
                         </SectionTitle>
 
                         <Anchor

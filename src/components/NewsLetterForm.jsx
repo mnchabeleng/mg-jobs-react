@@ -5,6 +5,9 @@ import Button from './html/form/Button'
 import Label from './html/form/Label'
 
 const messages = {
+    formResponse: {
+        success: 'Thank you for subscribing to our newsletter. You\'ll get notified as soon as new jobs and tenders are posted.'
+    },
     name: {
         error: 'Provide a name, minimum 3 characters'
     },
@@ -15,12 +18,12 @@ const messages = {
 
 export default function NewsLetterForm() {
     const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+
     const [nameResponse, setNameResponse] = useState({
         type: '',
         message: ''
     })
-
-    const [email, setEmail] = useState('')
     const [emailResponse, setEmailResponse] = useState({
         type: '',
         message: ''
@@ -35,11 +38,16 @@ export default function NewsLetterForm() {
 
     function handleFormSubmitSubmit(e) {
         e.preventDefault()
+
+        setFormResponse({
+            type: '',
+            message: ''
+        })
         
         if(!validName(name)) {
             setNameResponse({
                 type: 'error',
-                message: 'Provide a name, minimum 3 characters'
+                message: messages.name.error
             })
         } else {
             setNameResponse({
@@ -51,7 +59,7 @@ export default function NewsLetterForm() {
         if(!validEmail(email)) {
             setEmailResponse({
                 type: 'error',
-                message: 'Provide a valid email address'
+                message: messages.email.error
             })
         } else {
             setEmailResponse({
@@ -68,7 +76,7 @@ export default function NewsLetterForm() {
                 setEmail('')
                 setFormResponse({
                     type: 'success',
-                    message: 'Thank you for subscribing to our newsletter. You\'ll get notified as soon as new jobs/tenders are posted.'
+                    message: messages.formResponse.success
                 })
             }, 1000)
         }
@@ -80,7 +88,7 @@ export default function NewsLetterForm() {
         if(!validName(name)) {
             setNameResponse({
                 type: 'error',
-                message: 'Provide a name, minimum 3 characters'
+                message: messages.name.error
             })
         } else {
             setNameResponse({
@@ -96,7 +104,7 @@ export default function NewsLetterForm() {
         if(!validEmail(email)) {
             setEmailResponse({
                 type: 'error',
-                message: 'Provide a valid email address'
+                message: messages.email.error
             })
         } else {
             setEmailResponse({
