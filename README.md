@@ -52,11 +52,3 @@ npm run build
 ```
 
 2. You can now deploy the application by copying the contents of the "dist" directory to a web server or hosting service.
-
-&nbsp;
-### MG Jobs current Wordpress URL(Jobs are uploaded here):
-https://staging-jobsmgco-staging.kinsta.cloud/wp-admin
-
-&nbsp;
-### MG Jobs current Frontend(Jobs are displayed here):
-https://mgjobsreact.kinsta.cloud/
