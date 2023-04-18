@@ -1,5 +1,9 @@
 # Mail & Guardian Jobs
 
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/mnchabeleng/mg-jobs-react/main/screenshot.png)
+
 ## Install Node.js via NVM
 
 1. Install NVM by running the following command in your terminal:
