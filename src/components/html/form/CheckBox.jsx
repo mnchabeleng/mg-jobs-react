@@ -9,7 +9,7 @@ export default function CheckBox(props) {
     const classes = className ?? ''
 
     return (
-        <label htmlFor="vue-checkbox-list" className="flex items-center ml-2 cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-300">
+        <label htmlFor="vue-checkbox-list" className="flex items-center ml-2 cursor-pointer text-sm font-medium text-gray-50 dark:text-gray-300">
             <input
                 value={ value ?? '' }
                 type="checkbox"
